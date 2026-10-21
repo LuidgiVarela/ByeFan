@@ -1,0 +1,220 @@
+{
+  "researched_on": "2026-10-18",
+  "source": "Public metadata GET only; no Actor runs started",
+  "actors": {
+    "steadyfetch": {
+      "actor": "steadyfetch~instagram-followers-scraper",
+      "id": "SKbAepS7VxEfqbdsD",
+      "build": "1.0.54",
+      "build_id": "66G0tlqVQ3lggBnoW",
+      "pricing": [
+        {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.05,
+          "startedAt": "2026-09-11T10:25:02.761Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "follower": {
+                "eventTitle": "Follower",
+                "eventDescription": "One account delivered from a followers or following list you asked for, in either direction, at one price. Every row carries the account as Instagram lists it. Lists Instagram caps, private accounts and accounts that could not be read come back as uncharged rows saying why.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-11T10:25:02.863Z",
+          "apifyMarginPercentage": 0.2
+        },
+        {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.05,
+          "startedAt": "2026-10-30T10:45:02.414Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "follower": {
+                "eventTitle": "Follower",
+                "eventDescription": "One account delivered from a followers or following list you asked for, in either direction, at one price. Every row carries the account as Instagram lists it. Lists Instagram caps, private accounts and accounts that could not be read come back as uncharged rows saying why.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                }
+              },
+              "profile-read": {
+                "eventTitle": "Profile read (once per profile read fresh)",
+                "eventDescription": "Once per profile a run reads fresh, new followers or not; with rows you already have included, once per 100 of them. Never on the free sample, private or missing profiles, or lists known from memory.",
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "reasonForChange": "Each profile a run reads now carries one small read fee, so schedules that re-read the same lists pay for the reading. The price per follower stays the same; private or missing profiles cost nothing.",
+          "createdAt": "2026-10-16T10:45:02.531Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-10-16T10:45:24.377Z"
+        }
+      ],
+      "input_properties": {
+        "usernames": {
+          "type": "array",
+          "default": [
+            "_demo"
+          ],
+          "description": "Instagram handles to collect, e.g. [\"nasa\"] — up to resultsLimit rows from each account and list (100 by default, up to 50,000) per run; \"nasa\", \"@nasa\" or https://www.instagram.com/nasa/ all work, one per line. A handle that does not exist, a private or empty account and a read that did not go through come back as labelled rows and are never charged. By default a re-run skips rows your account already has, uncharged and outside resultsLimit. A hashtag or a single-post link is refused on an uncharged row naming the steadyfetch field that takes it. \"_demo\" is the sample switch, not a handle: leave the field empty in the console and click Start for built-in sample rows, at no result fee."
+        },
+        "mode": {
+          "type": "string",
+          "default": "followers",
+          "description": "\"followers\" (default) returns the accounts that follow each username. \"following\" returns the accounts each username follows. \"both\" returns each list separately, and a person who appears in both gets one row per list, because they are two different facts. Your result limit applies to each list on its own. An unrecognised value is refused on an uncharged row rather than quietly swapped for another list."
+        },
+        "resultsLimit": {
+          "type": "integer",
+          "default": 100,
+          "minimum": 1,
+          "description": "Hard cap on the rows delivered for EACH account and EACH list. Three handles in \"both\" mode at 100 each collects up to 600 rows. A list that holds fewer than you asked for leaves an uncharged row saying how many it actually holds — it never borrows another account's share. ⚠ Instagram itself limits how much of a very large account's follower list anyone can see; when that limit is what stops a list, the row says so and the rows past it are not charged. This actor delivers at most 50,000 rows per list: ask for more and the run continues at 50,000, with one uncharged row saying so, rather than being refused."
+        },
+        "maxRunSeconds": {
+          "type": "integer",
+          "default": 1800,
+          "description": "The run stops cleanly before this many seconds and reports what is left, instead of being killed by a timeout. A time limit ends the collecting, never the delivering: rows already in hand are always written out. The clock runs between 30 seconds and 1 hour: set it outside that and the run continues at the nearest one, with one uncharged row saying so, rather than being refused."
+        },
+        "includeSeen": {
+          "type": "boolean",
+          "default": false,
+          "description": "OFF (default): a row already delivered to your account is skipped — no row, no charge — and the next new one takes its place, so you still get the number you asked for. ON: those rows are delivered again anyway, marked `repeat: true`, and still not charged. Rows older than 90 days in your account's memory count as new again either way."
+        },
+        "resumeCursor": {
+          "type": "object",
+          "description": "The resumeCursor object from the last row of a previous run of this actor, exactly as it appears there. This run starts each list at the position that run reached: no page is read twice, no row already delivered to you is delivered or charged again, and nothing in between is skipped. It positions the lists you ask for on THIS run — it does not add accounts, so keep the same usernames beside it. Leave it empty to start from the top. A value that cannot be read is refused on an uncharged row rather than quietly restarting the list from page one."
+        },
+        "resumeFromDatasetId": {
+          "type": "string",
+          "description": "The dataset ID of a previous run of this actor. Rows already in it are treated as rows you already have and are skipped, so a follow-up run collects only what is new even from a different Apify account. Selecting it here is what grants this run permission to read it."
+        }
+      },
+      "required": []
+    },
+    "apify": {
+      "actor": "apify~instagram-followers-following-scraper",
+      "id": "zmvXTNnmCOjErk4wh",
+      "build": "0.0.168",
+      "build_id": "wk9G0B3LjHYjuSryU",
+      "pricing": [
+        {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 1e-05,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-16T13:30:13.032Z",
+          "startedAt": "2026-07-16T13:30:13.032Z",
+          "apifyMarginPercentage": 0.2
+        },
+        {
+          "minimalMaxTotalChargeUsd": 0.002,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "profile": {
+                "eventTitle": "Profile",
+                "eventDescription": "Each profile written to the dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00115
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00105
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0007
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-06T12:43:54.456Z",
+          "startedAt": "2026-08-06T12:43:54.456Z",
+          "apifyMarginPercentage": 0.2
+        }
+      ],
+      "input_properties": {
+        "usernames": {
+          "type": "array",
+          "description": "Public Instagram usernames (without @) whose followers or following you want to scrape. Use the <strong>&#[resultado omitido]; Add</strong> button to add more usernames."
+        },
+        "dataToScrape": {
+          "type": "string",
+          "enum": [
+            "followers",
+            "following"
+          ],
+          "default": "followers",
+          "description": "What do you want to scrape from each account?"
+        },
+        "resultsLimit": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Maximum number of followers or following to scrape per username. If you set it to 5, you'll get 5 followers/following for each profile you've included.<br><br>⚠️ Free usage covers just the first page of results. To get more pages, <a href='https://console.apify.com/billing/current-period' target='_blank' rel='noopener'>Upgrade your plan</a>."
+        }
+      },
+      "required": [
+        "usernames"
+      ]
+    }
+  }
+}

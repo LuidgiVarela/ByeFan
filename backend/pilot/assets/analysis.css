@@ -1,0 +1,13 @@
+.saved-analysis{border:2px solid var(--ink);border-radius:22px;padding:30px;margin-top:25px;margin-bottom:50px;background:var(--white)}
+.saved-analysis h2{font-size:32px;letter-spacing:-1px;margin:12px 0}.saved-analysis .primary{max-width:350px}
+.saved-analysis .saved-notice{padding:16px 20px;background:#eeeee4;border-left:3px solid #778752;font-size:13px;line-height:1.7}
+.saved-analysis .saved-metrics{display:flex;gap:24px;flex-wrap:wrap;margin:25px 0;font-size:14px;line-height:1.8}
+.saved-analysis .saved-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.saved-tabs button{border:1px solid var(--line);border-radius:20px;background:var(--paper);padding:12px;font-size:12px}.saved-tabs button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.saved-search{display:block;margin:20px 0}.saved-search input{display:block;width:100%;max-width:360px;margin-top:8px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-size:16px}
+.saved-status{font-size:13px;color:var(--muted);line-height:1.7}.saved-analysis .person-name{word-break:break-all}.saved-analysis .saved-history{margin-top:28px;padding-top:15px;border-top:1px solid var(--line);font-size:13px;line-height:1.7}
+.saved-highlight{display:flex;align-items:center;gap:24px;background:var(--lime);padding:22px;border-radius:14px;margin:24px 0 16px}.saved-highlight strong{font-size:52px;letter-spacing:-2px}.saved-highlight p{max-width:450px;font-size:17px;line-height:1.5;margin:0}
+.saved-quality{margin-bottom:20px}.saved-quality .saved-metrics{margin:0 0 12px}.saved-quality>p{margin-left:0}
+.saved-analysis .person{align-items:flex-start;padding:20px 0}.saved-person-text{min-width:0;flex:1}.saved-analysis .person-name{font-size:15px}.saved-directions{display:flex;flex-direction:column;gap:7px;font-size:12px;margin-top:10px;color:var(--muted)}.saved-directions .saved-unconfirmed{color:var(--warn)}
+.saved-profile-link{flex:none;padding:9px 10px;border:1px solid var(--line);border-radius:7px;font-size:11px}.saved-profile-link:hover{background:var(--soft)}
+@media(max-width:650px){.saved-analysis{padding:20px}.saved-analysis h2{font-size:27px}.saved-analysis .saved-metrics{gap:10px;flex-direction:column}}
+@media(max-width:650px){.saved-highlight{align-items:flex-start;flex-direction:column;gap:5px;padding:18px}.saved-highlight p{font-size:15px}.saved-analysis .person{display:grid;grid-template-columns:32px minmax(0,1fr)}.saved-profile-link{grid-column:2;justify-self:start}.saved-analysis .person-name{font-size:14px}.saved-directions{font-size:11px}}

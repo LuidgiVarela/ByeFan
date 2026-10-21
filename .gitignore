@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.env.local
+.pytest_cache/
+reports/
+reference*.json
+*.log
+*.dpapi
+*session*.json
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.worker.lock
+
+# Local Instagram research outputs can contain account identifiers, profile
+# metadata, session details, or collected results. Keep them out of Git.
+docs/*probe*.json
+docs/*diagnostic*.json
+docs/*result*.md
+docs/local-live-*.md
+docs/*plans.json
+
+# Keep the sanitized pilot guide versioned.
+!docs/local-live-pilot.md
+/site/.openai/hosting.json

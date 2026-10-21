@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="description" content="ByeFan — I'm not your fan. Explore a prévia de uma forma mais clara de entender suas conexões no Instagram.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>ByeFan — I'm not your fan.</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#experimentar">Pular para a demonstração</a>
+  <div class="preview-bar"><span class="status-dot"></span> PRÉVIA DO PRODUTO <span class="bar-divider">/</span> Consultas reais ainda não estão disponíveis.</div>
+  <header class="header wrap">
+    <a class="wordmark" href="#inicio" aria-label="ByeFan, início"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 9v22h14c9 0 14-9 9-15-3-4-8-4-12-2V9z" fill="currentColor"/><path d="m21 17 7 7m0-7-7 7" stroke="#f5f3eb" stroke-width="2.5"/></svg>bye<span>fan</span></a>
+    <nav aria-label="Navegação principal"><a href="#como-funciona">Como funciona</a><a href="#perguntas">Dúvidas</a><a class="nav-cta" href="#experimentar">Conhecer a prévia <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="inicio">
+    <section class="hero wrap" aria-labelledby="headline">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="short-line"></span> MENOS ACHISMO. MAIS CLAREZA.</p>
+        <h1 id="headline">I'm not<br>your <span class="fan-word">fan.<svg viewBox="0 0 300 30" aria-hidden="true"><path d="M7 16Q137-2 289 12M15 26Q155 6 273 24"/></svg></span></h1>
+        <p class="intro">Você segue por interesse.<br>Não por obrigação.</p>
+        <p class="hero-description">Entenda suas conexões no Instagram e veja o que os dados realmente dizem. Sem confundir uma lista parcial com uma certeza.</p>
+        <div class="hero-tags"><span>Sem senha nesta prévia</span><span>Você decide quem seguir</span></div>
+      </div>
+      <section class="analysis-card" id="experimentar" aria-labelledby="form-title">
+        <div class="card-heading"><span class="eyebrow">CONHEÇA O BYEFAN</span><span class="badge">DEMO</span></div>
+        <h2 id="form-title">Reciprocidade?<br>Vamos por partes.</h2>
+        <p class="card-description">Experimente o caminho da análise até o relatório, com um perfil de exemplo.</p>
+        <form id="analysis-form" novalidate>
+          <label for="username">Perfil do Instagram</label>
+          <div class="input-shell"><span aria-hidden="true">@</span><input id="username" name="username" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="seu.usuario" maxlength="31" aria-describedby="input-help form-error"></div>
+          <p id="input-help" class="helper">Nesta prévia, só o perfil fictício <strong>exemplo.byefan</strong> gera uma demonstração.</p>
+          <p class="error" id="form-error" role="alert" hidden></p>
+          <button class="primary" id="submit-button" type="submit">Experimentar demonstração <span aria-hidden="true">↗</span></button>
+          <button class="example-button" id="use-example" type="button">Usar @exemplo.byefan</button>
+        </form>
+        <div class="privacy-note"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8" width="12" height="9" rx="2"/><path d="M7 8V5a3 3 0 0 1 6 0v3"/></svg><p>Seu @ digitado fica neste navegador.<br>Não acessamos o Instagram nesta demonstração.</p></div>
+      </section>
+      <div class="hero-foot"><span>CONEXÕES COM MAIS CONTEXTO.</span><a href="#como-funciona">Entenda a ideia <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section id="progress-section" class="wrap flow-section" aria-labelledby="progress-title" hidden>
+      <div class="flow-heading"><div><p class="eyebrow">DEMONSTRAÇÃO · PERFIL FICTÍCIO</p><h2 id="progress-title" tabindex="-1">Seu exemplo está a caminho.</h2></div><button class="text-button" id="cancel-button">Cancelar</button></div>
+      <div class="progress-track"><div id="progress-fill"></div></div>
+      <div class="progress-caption"><p id="progress-status" role="status" aria-live="polite">Preparando a demonstração…</p><span id="progress-number" aria-hidden="true">0%</span></div>
+      <p class="helper">Este progresso é de uma simulação. Nenhum perfil real está sendo consultado.</p>
+    </section>
+
+    <section id="results-section" class="wrap flow-section" aria-labelledby="results-title" hidden>
+      <div class="flow-heading"><div><p class="eyebrow">EXEMPLO DE RELATÓRIO · DADOS FICTÍCIOS</p><h2 id="results-title" tabindex="-1">Quem pode não seguir você de volta?</h2><p class="muted">@exemplo.byefan <span aria-hidden="true">·</span> <span id="result-date"></span></p></div><button class="text-button" id="reset-button">Voltar ao início <span aria-hidden="true">↗</span></button></div>
+      <div class="candidate-summary"><strong>11</strong><div><p>perfis que você segue e não foram encontrados entre seus seguidores.</p><small>Candidatos do exemplo fictício · aguardam confirmação</small></div></div>
+      <div class="result-summary">
+        <div><p>Seguidores na amostra fictícia</p><strong>49 <span>/ 50</span></strong><small>1 registro ausente neste exemplo</small></div>
+        <div><p>Seguindo na amostra fictícia</p><strong>60 <span>/ 60</span></strong><small>Contagem coincidente não prova integridade</small></div>
+        <div class="quality"><span class="badge">RESULTADO PARCIAL</span><p>Não encontrar alguém na amostra <strong>não prova</strong> que essa pessoa não segue você.</p></div>
+      </div>
+      <div class="results-toolbar"><div class="filters" role="group" aria-label="Filtrar conexões fictícias"><button data-filter="unseen" aria-pressed="true">Possíveis não seguidores <span>11</span></button><button data-filter="mutual" aria-pressed="false">Vocês se seguem <span>49</span></button><button data-filter="all" aria-pressed="false">Todos que você segue <span>60</span></button></div><label class="search-label"><span class="sr-only">Buscar perfil fictício</span><input type="search" id="search" placeholder="Buscar nome ou @…" maxlength="60"></label></div>
+      <p class="helper" id="list-explanation">Você segue estes perfis, mas eles não aparecem entre os seguidores recuperados.</p>
+      <ul class="people-list" id="people-list" aria-label="Conexões fictícias" aria-describedby="list-explanation"></ul>
+      <p id="empty-state" role="status" hidden>Nenhum perfil do exemplo corresponde à busca.</p>
+      <div class="list-footer"><p class="helper" id="list-count" aria-live="polite"></p><button id="more-button" class="text-button">Mostrar mais <span aria-hidden="true">↓</span></button></div>
+      <p class="result-footnote">Todos os nomes acima são exemplos. Não representam contas consultadas. Esta prévia não produz uma lista definitiva de quem não segue de volta.</p>
+    </section>
+
+    <section class="method-section" id="como-funciona" aria-labelledby="method-title"><div class="wrap">
+      <div class="section-heading"><p class="eyebrow">A IDEIA É SIMPLES</p><h2 id="method-title">Seu @ é o começo.<br>A confiança está nos detalhes.</h2></div>
+      <ol class="steps"><li><span class="step-number">01</span><h3>Um perfil. Só isso.</h3><p>A proposta do ByeFan é começar pelo @ de uma conta pública. Nesta prévia, você explora um perfil fictício.</p></li><li><span class="step-number">02</span><h3>Veja o que foi observado.</h3><p>Um relatório precisa mostrar quanto foi recuperado, quando e se ficou alguma informação pelo caminho.</p></li><li><span class="step-number">03</span><h3>Decida com contexto.</h3><p>Dados incompletos pedem cuidado. O ByeFan não deve transformar ausência na amostra em uma conclusão definitiva.</p></li></ol>
+    </div></section>
+    <section class="faq wrap" id="perguntas" aria-labelledby="faq-title"><div><p class="eyebrow">SEM LETRAS MIÚDAS</p><h2 id="faq-title">Antes de<br>dar o próximo passo.</h2><p class="muted">O que esta versão faz — e o que ainda estamos validando.</p></div><div class="faq-items">
+      <details><summary>Já posso analisar meu Instagram?<span aria-hidden="true">+</span></summary><p>Ainda não por este site. Esta é uma prévia da experiência com dados fictícios. A coleta real segue em testes controlados, antes de liberarmos consultas.</p></details>
+      <details><summary>Preciso informar minha senha?<span aria-hidden="true">+</span></summary><p>Não. Esta prévia não pede login, senha, cookies ou arquivos do Instagram. O campo de @ é usado apenas para demonstrar a experiência e não é enviado ao Instagram.</p></details>
+      <details><summary>98% dos registros significa 98% de acerto?<span aria-hidden="true">+</span></summary><p>Não. Cobertura mede quantos registros foram observados em relação a uma contagem. Se um seguidor estiver justamente entre os registros ausentes, uma comparação pode chegar à conclusão errada. Por isso, relatórios parciais precisam dizer que são parciais.</p></details>
+      <details><summary>O ByeFan deixa de seguir alguém por mim?<span aria-hidden="true">+</span></summary><p>Não. O objetivo é ajudar você a entender suas conexões. A decisão e qualquer ação na sua conta continuam sendo suas.</p></details>
+      <details><summary>Existe cobrança nesta versão?<span aria-hidden="true">+</span></summary><p>Não há pagamento ou assinatura nesta prévia. A disponibilidade e as condições de um eventual serviço serão informadas antes de seu lançamento.</p></details>
+    </div></section>
+    <section class="closing wrap"><p>Seu feed.<br><span>Suas escolhas.</span></p><a href="#experimentar" class="round-link" aria-label="Voltar à demonstração">↗</a></section>
+  </main>
+  <footer class="wrap"><a class="wordmark footer-logo" href="#inicio">byefan</a><p>I'm not your fan.</p><button id="privacy-button" class="text-button">Privacidade desta prévia</button><span>Projeto independente, sem afiliação ao Instagram ou à Meta.</span></footer>
+  <dialog id="privacy-dialog" aria-labelledby="privacy-title"><button id="close-privacy" class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow">PRIVACIDADE</p><h2 id="privacy-title">Uma prévia, sem sua conta.</h2><p>Não pedimos senha e não consultamos perfis reais. O texto do campo de @ fica na memória desta página e desaparece ao recarregar.</p><p>No modo local de desenvolvimento, apenas um trabalho fictício é enviado à fila do computador. Na prévia hospedada, toda a demonstração funciona no navegador.</p><p>Não incluímos anúncios, analytics ou armazenamento de perfis neste site. A plataforma de hospedagem pode tratar dados técnicos de acesso conforme suas próprias políticas.</p><button id="privacy-done" class="primary">Entendi</button></dialog>
+</body>
+</html>
